@@ -100,9 +100,9 @@ jobs:
           fi
 
           # if ! file apk_download/* | grep -q "Android package (APK)"; then
-          #   APKEDITOR_URL=$(curl -s https://api.github.com/repos/REAndroid/APKEditor/releases/latest | jq -r '.assets[] | select(.name | test("^APKEditor-.*\\.jar$")) | .browser_download_url')
-          #   echo "APKEDITOR_URL=$APKEDITOR_URL"
-          #   wget -O APKEditor.jar "$APKEDITOR_URL"
+          APKEDITOR_URL=$(curl -s https://api.github.com/repos/REAndroid/APKEditor/releases/latest | jq -r '.assets[] | select(.name | test("^APKEditor-.*\\.jar$")) | .browser_download_url')
+          echo "APKEDITOR_URL=$APKEDITOR_URL"
+          wget -O APKEditor.jar "$APKEDITOR_URL"
 
           #   java -jar APKEditor.jar m -i apk_download/* -o main.apk
           # else
