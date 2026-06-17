@@ -104,7 +104,7 @@ jobs:
             echo "APKEDITOR_URL=$APKEDITOR_URL"
             wget -O APKEditor.jar "$APKEDITOR_URL"
 
-            java -jar APKEditor.jar m -i apk_download/* -o main.apk
+            java -jar APKEditor.jar m -i apk_download -o main.apk
           else
             cp apk_download/* main.apk
           fi
